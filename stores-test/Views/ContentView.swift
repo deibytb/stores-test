@@ -11,6 +11,8 @@ import KingfisherSwiftUI
 
 struct ContentView: View {
   
+  @State private var searchTerm: String = ""
+  
   @ObservedObject var storesVM: StoresViewModel
   
   init() {
@@ -19,12 +21,20 @@ struct ContentView: View {
   
   var body: some View {
     NavigationView {
-      List(self.storesVM.stores, id:\.storeID) { store in
-        NavigationLink(destination: StoreDetail(store: store)) {
-          StoreCell(store: store)
+      VStack {
+        SearchBarView(searchText: self.$searchTerm)
+        
+        List(self.storesVM.stores.filter {
+          self.searchTerm.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(self.searchTerm)
+        }, id:\.storeID) { store in
+          NavigationLink(destination: StoreDetail(store: store)) {
+            StoreCell(store: store)
+          }
         }
+        
       }
     .navigationBarTitle("Stores")
+    
     }
   }
   

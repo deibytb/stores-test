@@ -18,6 +18,7 @@
 		A20AF70523CFFC4F00C87023 /* StoresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AF70423CFFC4F00C87023 /* StoresViewModel.swift */; };
 		A20AF70823D0096100C87023 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = A20AF70723D0096100C87023 /* KingfisherSwiftUI */; };
 		A20AF70B23D00FFA00C87023 /* StoreDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AF70A23D00FFA00C87023 /* StoreDetail.swift */; };
+		A20AF70D23D0131600C87023 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20AF70C23D0131600C87023 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		A20AF70123CFF3EC00C87023 /* StoresService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresService.swift; sourceTree = "<group>"; };
 		A20AF70423CFFC4F00C87023 /* StoresViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresViewModel.swift; sourceTree = "<group>"; };
 		A20AF70A23D00FFA00C87023 /* StoreDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetail.swift; sourceTree = "<group>"; };
+		A20AF70C23D0131600C87023 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			children = (
 				A20AF6ED23CFF0FC00C87023 /* ContentView.swift */,
 				A20AF70A23D00FFA00C87023 /* StoreDetail.swift */,
+				A20AF70C23D0131600C87023 /* SearchBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				A20AF70523CFFC4F00C87023 /* StoresViewModel.swift in Sources */,
 				A20AF70223CFF3EC00C87023 /* StoresService.swift in Sources */,
 				A20AF6EE23CFF0FC00C87023 /* ContentView.swift in Sources */,
+				A20AF70D23D0131600C87023 /* SearchBar.swift in Sources */,
 				A20AF70B23D00FFA00C87023 /* StoreDetail.swift in Sources */,
 				A20AF6FF23CFF2D300C87023 /* Store.swift in Sources */,
 			);
