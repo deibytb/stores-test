@@ -59,10 +59,18 @@ struct StoreCell: View {
       VStack(alignment: .leading) {
         Text(store.name)
           .font(Font.headline)
-        Text(store.phone)
-          .font(Font.caption)
-        Text(store.address)
-          .font(Font.caption)
+          .padding(.bottom, 4)
+          .padding(.leading, 16)
+        HStack {
+          Image(systemName: "phone")
+          Text(store.phone)
+            .font(Font.caption)
+        }.padding(.bottom, 4).padding(.leading, 16)
+        HStack {
+          Image(systemName: "location")
+          Text(store.address + ", " + store.city)
+            .font(Font.caption)
+        }.padding(.leading, 16)
       }
     }
   }
