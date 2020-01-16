@@ -20,22 +20,30 @@ struct StoreDetail: View {
         .aspectRatio(contentMode: .fit)
         .frame(width: 250, height: 100)
       Text(store.name)
-        .font(Font.headline)
-      Text(store.phone)
-        .font(Font.caption)
-      Text(store.address)
-        .font(Font.caption)
-      
-      Text(store.city)
-        .font(Font.caption)
-      Text(store.state)
-        .font(Font.caption)
-      Text(store.zipcode)
-        .font(Font.caption)
-      Text(store.latitude)
-        .font(Font.caption)
-      Text(store.longitude)
-        .font(Font.caption)
+        .font(Font.title)
+        .padding()
+      HStack {
+        Image(systemName: "phone.fill")
+        Text(store.phone)
+          .font(Font.headline)
+      }
+      HStack {
+        Image(systemName: "location.fill")
+        Text(store.address + ", " + store.city)
+          .font(Font.headline)
+      }
+      Spacer()
+      MapView(store: store)
+      HStack {
+        Text("STATE: " + store.state)
+          .font(Font.footnote)
+        Text("ZIP CODE: " + store.zipcode)
+          .font(Font.caption)
+        Text("LAT: " + store.latitude)
+          .font(Font.caption)
+        Text("LON: " + store.longitude)
+          .font(Font.caption)
+      }
     }
   }
 }
