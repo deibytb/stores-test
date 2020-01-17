@@ -14,20 +14,25 @@ class StoresViewModel: ObservableObject {
   private var storesService: StoresService
   
   @Published var stores: [Store] = []
-    
+  @Published var errorMessage: String = ""
+  
   init() {
     self.storesService = StoresService()
     self.fetchStores()
   }
   
   private func fetchStores() {
-    self.storesService.getStores { (stores) in
-      if let stores = stores {
+    self.storesService.getStores { (result) in
+      switch result {
+      case let .success(stores):
         DispatchQueue.main.async {
           self.stores = stores
+        }
+      case let .failure(error):
+        DispatchQueue.main.async {
+          self.errorMessage = error.localizedDescription
         }
       }
     }
   }
-  
 }

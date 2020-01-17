@@ -12,8 +12,6 @@ struct StoresResponse: Decodable {
   let stores: [Store]
 }
 
-
-
 struct Store: Decodable {
   var storeID: String
   var storeLogoURL: String

@@ -22,19 +22,22 @@ struct ContentView: View {
   var body: some View {
     NavigationView {
       VStack {
-        SearchBarView(searchText: self.$searchTerm)
-        
-        List(self.storesVM.stores.filter {
-          self.searchTerm.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(self.searchTerm)
-        }, id:\.storeID) { store in
-          NavigationLink(destination: StoreDetail(store: store)) {
-            StoreCell(store: store)
+        if self.storesVM.errorMessage != "" {
+          Text(self.storesVM.errorMessage)
+            .font(Font.caption)
+            .multilineTextAlignment(.center)
+        } else {
+          SearchBarView(searchText: self.$searchTerm)
+          List(self.storesVM.stores.filter {
+            self.searchTerm.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(self.searchTerm)
+          }, id:\.storeID) { store in
+            NavigationLink(destination: StoreDetail(store: store)) {
+              StoreCell(store: store)
+            }
           }
         }
-        
       }
     .navigationBarTitle("Stores")
-    
     }
   }
   
